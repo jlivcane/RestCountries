@@ -3,27 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CF287D072512693B00EEA2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D062512693B00EEA2EB /* AppDelegate.swift */; };
-		CF287D092512693B00EEA2EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D082512693B00EEA2EB /* SceneDelegate.swift */; };
-		CF287D0B2512693B00EEA2EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D0A2512693B00EEA2EB /* ViewController.swift */; };
-		CF287D0E2512693B00EEA2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF287D0C2512693B00EEA2EB /* Main.storyboard */; };
+		CF287D0B2512693B00EEA2EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D0A2512693B00EEA2EB /* MainViewController.swift */; };
 		CF287D102512693E00EEA2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF287D0F2512693E00EEA2EB /* Assets.xcassets */; };
 		CF287D132512693E00EEA2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF287D112512693E00EEA2EB /* LaunchScreen.storyboard */; };
+		CF287D1C251274ED00EEA2EB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CF287D1B251274ED00EEA2EB /* Alamofire */; };
+		CF287D22251275DA00EEA2EB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D21251275DA00EEA2EB /* Country.swift */; };
+		CF287D242512780A00EEA2EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF287D232512780A00EEA2EB /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF287D032512693B00EEA2EB /* RestCountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestCountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF287D062512693B00EEA2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF287D082512693B00EEA2EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF287D0A2512693B00EEA2EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF287D0D2512693B00EEA2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF287D0A2512693B00EEA2EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CF287D0F2512693E00EEA2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF287D122512693E00EEA2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF287D142512693E00EEA2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF287D21251275DA00EEA2EB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CF287D232512780A00EEA2EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF287D1C251274ED00EEA2EB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +58,47 @@
 		CF287D052512693B00EEA2EB /* RestCountries */ = {
 			isa = PBXGroup;
 			children = (
-				CF287D062512693B00EEA2EB /* AppDelegate.swift */,
-				CF287D082512693B00EEA2EB /* SceneDelegate.swift */,
-				CF287D0A2512693B00EEA2EB /* ViewController.swift */,
-				CF287D0C2512693B00EEA2EB /* Main.storyboard */,
+				CF287D20251275AF00EEA2EB /* Network Manager */,
+				CF287D1F251275A700EEA2EB /* Model */,
+				CF287D1D2512757800EEA2EB /* AppDelegate */,
+				CF287D1E2512759500EEA2EB /* View Controller */,
 				CF287D0F2512693E00EEA2EB /* Assets.xcassets */,
 				CF287D112512693E00EEA2EB /* LaunchScreen.storyboard */,
 				CF287D142512693E00EEA2EB /* Info.plist */,
 			);
 			path = RestCountries;
+			sourceTree = "<group>";
+		};
+		CF287D1D2512757800EEA2EB /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CF287D062512693B00EEA2EB /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CF287D1E2512759500EEA2EB /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF287D0A2512693B00EEA2EB /* MainViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		CF287D1F251275A700EEA2EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF287D21251275DA00EEA2EB /* Country.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF287D20251275AF00EEA2EB /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CF287D232512780A00EEA2EB /* NetworkManager.swift */,
+			);
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +117,9 @@
 			dependencies = (
 			);
 			name = RestCountries;
+			packageProductDependencies = (
+				CF287D1B251274ED00EEA2EB /* Alamofire */,
+			);
 			productName = RestCountries;
 			productReference = CF287D032512693B00EEA2EB /* RestCountries.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +148,9 @@
 				Base,
 			);
 			mainGroup = CF287CFA2512693B00EEA2EB;
+			packageReferences = (
+				CF287D1A251274ED00EEA2EB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CF287D042512693B00EEA2EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +167,6 @@
 			files = (
 				CF287D132512693E00EEA2EB /* LaunchScreen.storyboard in Resources */,
 				CF287D102512693E00EEA2EB /* Assets.xcassets in Resources */,
-				CF287D0E2512693B00EEA2EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +177,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF287D0B2512693B00EEA2EB /* ViewController.swift in Sources */,
+				CF287D242512780A00EEA2EB /* NetworkManager.swift in Sources */,
+				CF287D0B2512693B00EEA2EB /* MainViewController.swift in Sources */,
+				CF287D22251275DA00EEA2EB /* Country.swift in Sources */,
 				CF287D072512693B00EEA2EB /* AppDelegate.swift in Sources */,
-				CF287D092512693B00EEA2EB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CF287D0C2512693B00EEA2EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF287D0D2512693B00EEA2EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF287D112512693E00EEA2EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RestCountries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RestCountries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF287D1A251274ED00EEA2EB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF287D1B251274ED00EEA2EB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF287D1A251274ED00EEA2EB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF287CFB2512693B00EEA2EB /* Project object */;
 }
